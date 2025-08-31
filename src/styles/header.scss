@@ -206,3 +206,27 @@
   align-items: center;
   text-align: center;
 }
+
+.rotate-text {
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-size: 14px;
+
+  line-height: 100%;
+  color: #687480;
+  position: relative;
+  &::after {
+    content: '';
+    bottom: 50px;
+    left: 7px;
+    width: 1px;
+    height: 70px;
+    background-color: $c-green;
+    position: absolute;
+    display: none;
+
+    @include on-pc {
+      display: block;
+    }
+  }
+}
