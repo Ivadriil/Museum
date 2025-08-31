@@ -2,10 +2,11 @@
   color: $c-white;
   position: fixed;
   inset: 0;
-  background-color: $c-green;
+
   opacity: 0;
   width: 100%;
-  height: fit-content;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 
   transition: all 0.3s ease-in-out;
@@ -17,37 +18,38 @@
     z-index: 3;
 
     transform: translateX(0);
-    overflow: clip;
   }
 
   &__container {
     @include pading-inlain;
 
+    padding-bottom: 50px;
     max-width: 1280px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding-block: 27px;
+    padding-block: 27px 60px;
     gap: 42px;
 
     @include on-tablet {
-      padding-block: 40px;
+      padding-block: 40px 60px;
       flex-direction: row;
     }
 
     @include on-pc {
-      padding-block: 40px;
+      padding-block: 40px 60px;
       gap: 102px;
       flex-direction: row;
     }
 
     &__nav {
       &__close {
-        @include hover(transform, scale(1.2));
         &--link {
           display: block;
           width: 24px;
           height: 24px;
+
+          @include hover(transform, scale(1.2));
 
           align-content: center;
           justify-items: center;
@@ -83,6 +85,14 @@
       &__lists {
         display: flex;
         gap: 25px;
+
+        @include on-tablet {
+          gap: 30px;
+        }
+
+        @include on-pc {
+          gap: 100px;
+        }
         &--item {
           @include hover(transform, scale(1.2));
         }
@@ -96,6 +106,7 @@
     }
     &--lin {
       border: #fff solid 1px;
+
       border-top: 1;
       width: 280px;
       height: 1px;
@@ -153,4 +164,10 @@
 
 .margin-top {
   margin-top: 40px;
+}
+
+.backround--green {
+  width: 100%;
+  height: fit-content;
+  background-color: $c-green;
 }
